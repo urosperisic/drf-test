@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # external
     'drf_spectacular',
+    'rest_framework',
+    'rest_framework_simplejwt',
     # internal
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +133,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
@@ -138,3 +144,5 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'description',
     'VERSION': '1.0.0',
 }
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

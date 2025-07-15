@@ -17,3 +17,16 @@ python manage.py runserver
 pip install python-dotenv
 
 pip install drf-spectacular
+
+----------
+
+python manage.py startapp accounts
+
+pip install djangorestframework-simplejwt
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+
+----------
