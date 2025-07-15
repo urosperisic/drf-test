@@ -13,3 +13,5 @@ git status --ignored
 django-admin startproject drftest .
 
 python manage.py runserver
+
+pip install python-dotenv
