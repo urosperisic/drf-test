@@ -34,3 +34,34 @@ python manage.py createsuperuser
 python manage.py startapp notes
 
 ----------
+
+pip install psycopg2-binary
+
+psql --version
+
+psql -U postgres (exit - \q)
+psql -U postgres -l (psql - \l)
+
+psql -U postgres -d postgres
+DROP DATABASE testdb;
+
+psql -U postgres
+CREATE DATABASE u;
+CREATE USER u WITH PASSWORD 'u';
+GRANT ALL PRIVILEGES ON DATABASE u TO u;
+\c u
+GRANT ALL ON SCHEMA public TO u;
+
+python manage.py dumpdata > data.json
+
+[settings.py -> postgres]
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py loaddata data.json
+
+\conninfo
+\d
+
+----------
